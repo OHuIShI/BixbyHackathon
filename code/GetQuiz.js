@@ -44,13 +44,22 @@ module.exports.function = function getQuiz (num) {
 
   const console = require("console");
   let quizzes = require("./data/wordData.js");
+  let questions = [];
   let rand = 0;
-  
-  for(let i = 0; i < quizzes.length; ++i){
-    rand = Math.floor(Math.random() * 4);
-    quizzes[i].id = i + 1;    
+  let rand2 = 0;
+  for(let i = 0; i < num; ++i){
+    rand = Math.floor(Math.random() * quizzes.length);
+    questions[i].id = i + 1;
     //quizzes[i].question = textLib.CleanText(quizzes[i].question.trim());
-    quizzes[i].question = 
+    questions[i].question = quizzes[rand].word;
+    questions[i].correct_answer = quizzes[rand].mean;
+    quizzes.splice(rand, 1);
+    
+    for(let j=0;j<4;j++){
+      rand2 = Math.floor(Math.random() * quizzes.length);
+      questions[i].answers_list[j] = quizzes[rand2].mean;
+    }
+    quizzes.splice(0, -1, {word: questions[i].question, mean: questions[i].correct_answer});
     // if(quizzes.type == "boolean"){
     //   quizzes[i].incorrect_answers.splice(rand, 0, quizzes[i].correct_answer);
     // }else{
@@ -61,11 +70,11 @@ module.exports.function = function getQuiz (num) {
     //   }
     // }
     
-    quizzes[i].answers_list = quizzes[i].incorrect_answers;
+    //quizzes[i].answers_list = quizzes[i].incorrect_answers;
     
-    for(let j = 0; j < quizzes[i].answers_list.length; ++j){
-      quizzes[i].answers_list[j] = textLib.CleanText(quizzes[i].answers_list[j].trim());
-    }
+    // for(let j = 0; j < quizzes[i].answers_list.length; ++j){
+    //   quizzes[i].answers_list[j] = textLib.CleanText(quizzes[i].answers_list[j].trim());
+    // }
     
     quizzes[i].result = false;
     quizzes[i].incorrect_answers = null;
@@ -73,9 +82,9 @@ module.exports.function = function getQuiz (num) {
   }
 
   return {
-    quizzes: quizzes,
+    quizzes: questions,
     nowNum: 0,
-    totalNum: quizzes.length,
+    totalNum: questions.length,
     correctNum: 0
   };
 }

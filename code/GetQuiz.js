@@ -50,7 +50,7 @@ module.exports.function = function getQuiz (num) {
   let rand2 = 0;
   for(let i = 0; i < num; ++i){
     rand = Math.floor(Math.random() * quizzes.length);
-    let question = {id: i+1, question:quizzes[rand].word, correct_answer:quizzes[rand].mean, result: false, incorrect_answers: null, selected:-1, answer_list:[]};
+    let question = {id: i+1, question:quizzes[rand].word, correct_answer:quizzes[rand].mean, result: false, incorrect_answers: null, selected:-1, answers_list:[]};
     
     //questions[i].id = i + 1;
     //quizzes[i].question = textLib.CleanText(quizzes[i].question.trim());
@@ -59,11 +59,12 @@ module.exports.function = function getQuiz (num) {
     quizzes.splice(rand, 1);
 
     let answer_list = [];
-    for(let j=0;j<4;j++){
+    for(let j=0;j<3;j++){
       rand2 = Math.floor(Math.random() * quizzes.length);
       answer_list.push(quizzes[rand2].mean);
     }
-    question.answer_list = answer_list;
+    answer_list.push(question.correct_answer);
+    question.answers_list = answer_list;
     quizzes.splice(0, -1, {word: question.question, mean: question.correct_answer});
 
     

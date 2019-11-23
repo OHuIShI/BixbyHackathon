@@ -15,6 +15,10 @@ action (ShowQuiz) {
       type(QuizAnswers)
       min (Optional) max (One)
     }
+    input(ordinal){
+      type(entity.Ordinal)
+      min (Optional) max (One)
+    }
   }
   output (ProgressInfo)
 }

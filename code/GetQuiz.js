@@ -50,16 +50,16 @@ module.exports.function = function getQuiz (num) {
     rand = Math.floor(Math.random() * 4);
     quizzes[i].id = i + 1;    
     //quizzes[i].question = textLib.CleanText(quizzes[i].question.trim());
-    
-    if(quizzes.type == "boolean"){
-      quizzes[i].incorrect_answers.splice(rand, 0, quizzes[i].correct_answer);
-    }else{
-      if(quizzes[i].correct_answer == "True"){
-        quizzes[i].incorrect_answers.splice(0, 0, quizzes[i].correct_answer);
-      }else{
-        quizzes[i].incorrect_answers.push(quizzes[i].correct_answer);
-      }
-    }
+    quizzes[i].question = 
+    // if(quizzes.type == "boolean"){
+    //   quizzes[i].incorrect_answers.splice(rand, 0, quizzes[i].correct_answer);
+    // }else{
+    //   if(quizzes[i].correct_answer == "True"){
+    //     quizzes[i].incorrect_answers.splice(0, 0, quizzes[i].correct_answer);
+    //   }else{
+    //     quizzes[i].incorrect_answers.push(quizzes[i].correct_answer);
+    //   }
+    // }
     
     quizzes[i].answers_list = quizzes[i].incorrect_answers;
     

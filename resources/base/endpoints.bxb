@@ -6,7 +6,7 @@ endpoints {
       local-endpoint (GetQuiz.js)
     }
     action-endpoint (ShowQuiz) {
-      accepted-inputs (quizlist, answer)
+      accepted-inputs (quizlist, answer, ordinary)
       local-endpoint (ShowQuiz.js)
     }
 

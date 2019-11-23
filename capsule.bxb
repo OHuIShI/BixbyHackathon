@@ -11,4 +11,10 @@ capsule {
     modern-prompt-rejection
     support-halt-effect-in-computed-inputs
   }
+  capsule-imports{
+    import (viv.entity) {
+      as (entity)
+      version (3.21.0)
+    }
+  }
 }

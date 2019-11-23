@@ -1,9 +1,10 @@
 action (SetNum) {
   description (num 입력받기)
+  type(Constructor)
   collect {
     input (num) {
       type (Num)
-      min (Optional) max (One)
+      min (Required) max (One)
       default-init {
         intent {
           goal : GetNum

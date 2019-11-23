@@ -1,5 +1,5 @@
 input-view {
-  match : Num(target) {
+  match : SetNum(target) {
     to-input : Num
   }
   message ("몇 개의 문제를 원하시나요?")

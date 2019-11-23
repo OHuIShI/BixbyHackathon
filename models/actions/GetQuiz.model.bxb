@@ -4,8 +4,12 @@ action (GetQuiz) {
   collect {
     input (num) {
       type (Num)
-      min (Optional) max (One)
-      
+      min (Required) max (One)
+      default-init{
+        intent {
+          goal : SetNum
+        }
+      }
     }
   }
   output (ProgressInfo)

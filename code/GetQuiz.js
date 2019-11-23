@@ -51,6 +51,7 @@ module.exports.function = function getQuiz (num) {
   let rand2 = 0;
   console.log("hello");
   for(let i = 0; i < num; ++i){
+    console.log("original problems");
     console.log(problems);
     rand = Math.floor(Math.random() * problems.length);
     
@@ -63,12 +64,20 @@ module.exports.function = function getQuiz (num) {
 
     problems.splice(rand, 1);
     quizzes.splice(rand, 1);
+
+    console.log("after pick problems");
+    console.log("problems");
+    console.log(problems);
+    console.log("quizzes");
+    console.log(quizzes);
+
     let recover = [];
     let answer_list = [];
     for(let j=0;j<3;++j){
       rand2 = Math.floor(Math.random() * quizzes.length);
       console.log("rand2");
       console.log(rand2);
+      console.log("quizzes length");
       console.log(quizzes.length);
       answer_list.push(quizzes[rand2].mean);
       recover.push({word: quizzes[rand2].word, mean: quizzes[rand2].mean});
@@ -82,7 +91,6 @@ module.exports.function = function getQuiz (num) {
     console.log(recover);
     console.log("problems");
     console.log(problems);
-  
 
     rand2 = Math.floor(Math.random() * 4);
     let temp = answer_list[rand2];
@@ -98,6 +106,9 @@ module.exports.function = function getQuiz (num) {
     recover.map(w =>{
       quizzes.splice(0, -1, w);
     })
+
+    console.log("after recovering");
+    console.log(quizzes);
     
     // questions[i].result = false;
     // questions[i].incorrect_answers = null;

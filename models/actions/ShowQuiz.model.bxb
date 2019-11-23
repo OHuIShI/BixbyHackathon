@@ -1,0 +1,20 @@
+action (ShowQuiz) {
+  description (퀴즈 문제를 보여줍니다)
+  type(Constructor)
+  collect {
+    input (quizlist) {
+      type (ProgressInfo)
+      min (Required) max (One)
+      default-init{
+        intent{
+          goal: GetQuiz
+        }          
+      }
+    }
+    input(answer){
+      type(QuizAnswers)
+      min (Optional) max (One)
+    }
+  }
+  output (ProgressInfo)
+}

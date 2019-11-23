@@ -1,0 +1,3 @@
+integer (Num) {
+  description (__DESCRIPTION__)
+}

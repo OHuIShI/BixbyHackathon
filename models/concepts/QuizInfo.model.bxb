@@ -1,0 +1,26 @@
+structure (QuizInfo) {
+  property (id){
+    type(QuizID)
+    min (Required) max (One)
+  }
+  property (question) {
+    type (QuizQuestion)
+    min (Required) max (One)
+  }
+  property (correct_answer) {
+    type (QuizCorrect)
+    min (Required) max (One)
+  }
+  property (answers_list) {
+    type (QuizAnswers)
+    min (Optional) max (Many)
+  }
+  property (result) {
+    type (QuizAnswerResult)
+    min (Required) max (One)
+  }
+  property (selected) {
+    type (QuizSelectNum)
+    min (Required) max (One)
+  }
+}

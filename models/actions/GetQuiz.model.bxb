@@ -1,0 +1,11 @@
+action (GetQuiz) {
+  description (영어단어퀴즈)
+  type(Constructor)
+  collect {
+    input (num) {
+      type (Num)
+      min (Optional) max (One)
+    }
+  }
+  output (ProgressInfo)
+}

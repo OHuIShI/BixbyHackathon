@@ -43,31 +43,34 @@ module.exports.function = function getQuiz (num) {
   // result 는 객체 배열이고, 객체 {}가 들어온다.
 
   const console = require("console");
-  let quizzes = require("./data/wordData.js");
+  let response = require("./data/wordData.js");
+  let quizzes = response.Words;
   let questions = [];
   let rand = 0;
   let rand2 = 0;
   for(let i = 0; i < num; ++i){
     rand = Math.floor(Math.random() * quizzes.length);
-    let question = {id: i+1, question:quizzes[rand].word, correct_answer:quizzes[rand].mean, result: false, incorrect_answers: null, selected:-1};
+    let question = {id: i+1, question:quizzes[rand].word, correct_answer:quizzes[rand].mean, result: false, incorrect_answers: null, selected:-1, answer_list:[]};
     
     //questions[i].id = i + 1;
     //quizzes[i].question = textLib.CleanText(quizzes[i].question.trim());
     //questions[i].question = quizzes[rand].word;
     //questions[i].correct_answer = quizzes[rand].mean;
     quizzes.splice(rand, 1);
-    
+
+    let answer_list = [];
     for(let j=0;j<4;j++){
       rand2 = Math.floor(Math.random() * quizzes.length);
-      question.answers_list[j] = quizzes[rand2].mean;
+      answer_list.push(quizzes[rand2].mean);
     }
-    quizzes.splice(0, -1, {word: questions[i].question, mean: questions[i].correct_answer});
+    question.answer_list = answer_list;
+    quizzes.splice(0, -1, {word: question.question, mean: question.correct_answer});
 
     
     // questions[i].result = false;
     // questions[i].incorrect_answers = null;
     // quizzes[i].selected = -1;
-
+    console.log("here");
     questions.push(question);
   }
 

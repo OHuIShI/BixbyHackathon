@@ -5,6 +5,7 @@ action (GetQuiz) {
     input (num) {
       type (Num)
       min (Optional) max (One)
+      
     }
   }
   output (ProgressInfo)

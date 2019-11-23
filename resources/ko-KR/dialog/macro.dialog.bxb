@@ -40,3 +40,9 @@ template-macro-def (show_result) {
     }
   }
 }
+
+template-macro-def (require_set_num) {
+  content {
+    template ("문제 개수를 정해주세요.")
+  }
+}

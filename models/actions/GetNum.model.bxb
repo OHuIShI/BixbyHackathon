@@ -1,0 +1,7 @@
+action (GetNum) {
+  description (num 강제로 정하기)
+  collect {
+    
+  }
+  output (Num)
+}

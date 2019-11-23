@@ -1,0 +1,15 @@
+action (SetNum) {
+  description (num 입력받기)
+  collect {
+    input (num) {
+      type (Num)
+      min (Optional) max (One)
+      default-init {
+        intent {
+          goal : GetNum
+        }
+      }
+    }
+  }
+  output (Num)
+}

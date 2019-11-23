@@ -45,35 +45,52 @@ module.exports.function = function getQuiz (num) {
   const console = require("console");
   let response = require("./data/wordData.js");
   let quizzes = response.Words;
+  let problems = response.Words;
   let questions = [];
   let rand = 0;
   let rand2 = 0;
   for(let i = 0; i < num; ++i){
-    rand = Math.floor(Math.random() * quizzes.length);
-    let question = {id: i+1, question:quizzes[rand].word, correct_answer:quizzes[rand].mean, result: false, incorrect_answers: null, selected:-1, answers_list:[]};
+   
+    rand = Math.floor(Math.random() * problems.length);
+    
+    let question = {id: i+1, question:problems[rand].word, correct_answer:problems[rand].mean, result: false, incorrect_answers: null, selected:-1, answers_list:[]};
     
     //questions[i].id = i + 1;
     //quizzes[i].question = textLib.CleanText(quizzes[i].question.trim());
     //questions[i].question = quizzes[rand].word;
     //questions[i].correct_answer = quizzes[rand].mean;
+    problems.splice(rand, 1);
     quizzes.splice(rand, 1);
-
+    let recover = [];
     let answer_list = [];
     for(let j=0;j<4;j++){
       rand2 = Math.floor(Math.random() * quizzes.length);
       answer_list.push(quizzes[rand2].mean);
+      recover.push({word: quizzes[rand2].word, mean: quizzes[rand2].mean});
+      quizzes.splice(rand2, 1);
     }
+    console.log("answer_list");
+    console.log(answer_list);
+    console.log("recover");
+    console.log(recover);
+
     rand2 = Math.floor(Math.random() * 4);
     answer_list[rand2]=question.correct_answer;
-    
+
+    console.log("answerslist fin");
+    console.log(answer_list);
+
     question.answers_list = answer_list;
     quizzes.splice(0, -1, {word: question.question, mean: question.correct_answer});
 
+    recover.map(w =>{
+      quizzes.splice(0, -1, w);
+    })
     
     // questions[i].result = false;
     // questions[i].incorrect_answers = null;
     // quizzes[i].selected = -1;
-    console.log("here");
+    //console.log("here");
     questions.push(question);
   }
 

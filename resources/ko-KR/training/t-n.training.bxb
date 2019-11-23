@@ -1,0 +1,5 @@
+train (t-nax8cvy3krzky3zdhire75vxv) {
+  utterance ("[g:ShowQuiz] 단어 (3)[v:Num]개 문제 내줘")
+  plan (Y2BlUCjISaxML8ovzUvRK88vSgkszazSCyjKTy9KLS72zEvLZ5DBpiI4I78cxCBCvzQ2Fe6pJWDt4tgk/UpzGVgYGBmYGJiBNAOUxQhmgQATkAaKAwA=)
+  last-modified (1574497174958)
+}

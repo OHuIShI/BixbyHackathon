@@ -1,0 +1,5 @@
+train (t-9gnr5cnzbdk2bu1eq9u8y49s2) {
+  utterance ([g:ShowQuiz] 단어 시험 문제 내줘)
+  plan (Y2BmUCjISaxML8ovzUvRK88vSgkszazSCyjKTy9KLS72zEvLZ5DBpiI4I78cxCBCPxMDIxAzAElGBgYYDQA=)
+  last-modified (1574497261430)
+}

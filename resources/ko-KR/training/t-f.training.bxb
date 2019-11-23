@@ -1,0 +1,5 @@
+train (t-fasj5402bvbwl56tnc7sj09mk) {
+  utterance ([g:ShowQuiz] 영어 시험 보고 싶어)
+  plan (Y2BmUCjISaxML8ovzUvRK88vSgkszazSCyjKTy9KLS72zEvLZ5DBpiI4I78cxCBCPxMDIxAzAElGBgYYDQA=)
+  last-modified (1574497278930)
+}

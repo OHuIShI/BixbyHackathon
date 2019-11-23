@@ -12,6 +12,23 @@ module.exports = {
     {
       word : "burn out",
       mean : "불에 타다"
+    },
+    {
+      word : "unfold",
+      mean : "펴다"
+    },
+    {
+      word : "matter",
+      mean : "문제, 상황"
+    }
+    ,
+    {
+      word : "siraegi",
+      mean : "King Wang ZZang"
+    },
+    {
+      word : "Juhui",
+      mean : "GGobugi"
     }
   ]
 }

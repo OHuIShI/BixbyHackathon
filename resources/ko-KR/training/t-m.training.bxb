@@ -1,0 +1,5 @@
+train (t-mo2hr15j103r4d400pfv3t33b) {
+  utterance ([g:ShowQuiz] 퀴즈 시작해)
+  plan (Y2BmUCjISaxML8ovzUvRK88vSgkszazSCyjKTy9KLS72zEvLZ5DBpiI4I78cxCBCPxMDIxAzAElGBgYYDQA=)
+  last-modified (1574485062066)
+}

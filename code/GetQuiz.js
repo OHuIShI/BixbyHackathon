@@ -49,36 +49,26 @@ module.exports.function = function getQuiz (num) {
   let rand2 = 0;
   for(let i = 0; i < num; ++i){
     rand = Math.floor(Math.random() * quizzes.length);
-    questions[i].id = i + 1;
+    let question = {id: i+1, question:quizzes[rand].word, correct_answer:quizzes[rand].mean, result: false, incorrect_answers: null, selected:-1};
+    
+    //questions[i].id = i + 1;
     //quizzes[i].question = textLib.CleanText(quizzes[i].question.trim());
-    questions[i].question = quizzes[rand].word;
-    questions[i].correct_answer = quizzes[rand].mean;
+    //questions[i].question = quizzes[rand].word;
+    //questions[i].correct_answer = quizzes[rand].mean;
     quizzes.splice(rand, 1);
     
     for(let j=0;j<4;j++){
       rand2 = Math.floor(Math.random() * quizzes.length);
-      questions[i].answers_list[j] = quizzes[rand2].mean;
+      question.answers_list[j] = quizzes[rand2].mean;
     }
     quizzes.splice(0, -1, {word: questions[i].question, mean: questions[i].correct_answer});
-    // if(quizzes.type == "boolean"){
-    //   quizzes[i].incorrect_answers.splice(rand, 0, quizzes[i].correct_answer);
-    // }else{
-    //   if(quizzes[i].correct_answer == "True"){
-    //     quizzes[i].incorrect_answers.splice(0, 0, quizzes[i].correct_answer);
-    //   }else{
-    //     quizzes[i].incorrect_answers.push(quizzes[i].correct_answer);
-    //   }
-    // }
+
     
-    //quizzes[i].answers_list = quizzes[i].incorrect_answers;
-    
-    // for(let j = 0; j < quizzes[i].answers_list.length; ++j){
-    //   quizzes[i].answers_list[j] = textLib.CleanText(quizzes[i].answers_list[j].trim());
-    // }
-    
-    quizzes[i].result = false;
-    quizzes[i].incorrect_answers = null;
-    quizzes[i].selected = -1;
+    // questions[i].result = false;
+    // questions[i].incorrect_answers = null;
+    // quizzes[i].selected = -1;
+
+    questions.push(question);
   }
 
   return {

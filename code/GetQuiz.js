@@ -50,7 +50,7 @@ module.exports.function = function getQuiz (num) {
   let rand = 0;
   let rand2 = 0;
   for(let i = 0; i < num; ++i){
-   
+    console.log(problems);
     rand = Math.floor(Math.random() * problems.length);
     
     let question = {id: i+1, question:problems[rand].word, correct_answer:problems[rand].mean, result: false, incorrect_answers: null, selected:-1, answers_list:[]};
@@ -59,23 +59,34 @@ module.exports.function = function getQuiz (num) {
     //quizzes[i].question = textLib.CleanText(quizzes[i].question.trim());
     //questions[i].question = quizzes[rand].word;
     //questions[i].correct_answer = quizzes[rand].mean;
+
     problems.splice(rand, 1);
     quizzes.splice(rand, 1);
     let recover = [];
     let answer_list = [];
-    for(let j=0;j<4;j++){
+    for(let j=0;j<3;++j){
       rand2 = Math.floor(Math.random() * quizzes.length);
+      console.log("rand2");
+      console.log(rand2);
+      console.log(quizzes.length);
       answer_list.push(quizzes[rand2].mean);
       recover.push({word: quizzes[rand2].word, mean: quizzes[rand2].mean});
       quizzes.splice(rand2, 1);
     }
+
+    answer_list.push(question.correct_answer);
     console.log("answer_list");
     console.log(answer_list);
     console.log("recover");
     console.log(recover);
+    console.log("problems");
+    console.log(problems);
+  
 
     rand2 = Math.floor(Math.random() * 4);
+    let temp = answer_list[rand2];
     answer_list[rand2]=question.correct_answer;
+    answer_list[3] = temp;
 
     console.log("answerslist fin");
     console.log(answer_list);

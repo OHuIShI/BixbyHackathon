@@ -49,6 +49,7 @@ module.exports.function = function getQuiz (num) {
   let questions = [];
   let rand = 0;
   let rand2 = 0;
+  console.log("hello");
   for(let i = 0; i < num; ++i){
     console.log(problems);
     rand = Math.floor(Math.random() * problems.length);

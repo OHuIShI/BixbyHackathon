@@ -9,6 +9,13 @@ endpoints {
       accepted-inputs (quizlist, answer, ordinary)
       local-endpoint (ShowQuiz.js)
     }
+    action-endpoint (SetNum) {
+      accepted-inputs (num)
+      local-endpoint (SetNum.js)
+    }
+    action-endpoint (GetNum) {
+      local-endpoint (GetNum.js)
+    }
 
     // action-endpoint (__ACTION_NAME__) {
     //   accepted-inputs (__LIST_OF_ACTION_INPUTS__)

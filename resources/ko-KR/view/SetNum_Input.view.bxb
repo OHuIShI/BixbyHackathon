@@ -1,0 +1,9 @@
+input-view {
+  match : Num(target) {
+    to-input : Num
+  }
+  message ("몇 개의 문제를 원하시나요?")
+  render {
+
+  }
+}

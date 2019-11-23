@@ -59,11 +59,13 @@ module.exports.function = function getQuiz (num) {
     quizzes.splice(rand, 1);
 
     let answer_list = [];
-    for(let j=0;j<3;j++){
+    for(let j=0;j<4;j++){
       rand2 = Math.floor(Math.random() * quizzes.length);
       answer_list.push(quizzes[rand2].mean);
     }
-    answer_list.push(question.correct_answer);
+    rand2 = Math.floor(Math.random() * 4);
+    answer_list[rand2]=question.correct_answer;
+    
     question.answers_list = answer_list;
     quizzes.splice(0, -1, {word: question.question, mean: question.correct_answer});
 

@@ -29,6 +29,18 @@ module.exports = {
     {
       word : "Juhui",
       mean : "GGobugi"
+    },
+    {
+      word : "water",
+      mean : "물"
+    },
+    {
+      word : "frozen",
+      mean : "겨울왕국"
+    },
+    {
+      word : "coke",
+      mean : ""
     }
   ]
 }
